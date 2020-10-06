@@ -13,7 +13,7 @@ class CacheManager: NSObject {
     private let imageCache = NSCache<NSString, UIImage>()
     
     func getImage(urlString: String) -> UIImage? {
-        let image = imageCache.value(forKey: urlString) as? UIImage
+        let image = imageCache.object(forKey: NSString(string: urlString))
         return image
     }
     

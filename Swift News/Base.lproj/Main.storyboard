@@ -20,37 +20,51 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tpA-fe-huh">
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <view key="tableHeaderView" contentMode="scaleToFill" id="o0q-zM-LwH">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="19"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                </view>
+                                <view key="tableFooterView" contentMode="scaleToFill" id="dvp-oc-LBv">
+                                    <rect key="frame" x="0.0" y="544" width="414" height="19"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                </view>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="newsCell" rowHeight="303" id="D5p-fA-ZQg" customClass="NewsItemCell" customModule="Swift_News" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="303"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="newsCell" rowHeight="469" id="D5p-fA-ZQg" customClass="NewsItemCell" customModule="Swift_News" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="47" width="414" height="469"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="D5p-fA-ZQg" id="xAP-a6-Bgx">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="303"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="469"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="xTp-ZQ-xBw">
-                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="303"/>
-                                                    <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K0q-NH-u6I">
-                                                            <rect key="frame" x="0.0" y="0.0" width="414" height="20.5"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dLf-V5-W3u">
-                                                            <rect key="frame" x="0.0" y="20.5" width="414" height="282.5"/>
-                                                        </imageView>
-                                                    </subviews>
-                                                </stackView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K0q-NH-u6I">
+                                                    <rect key="frame" x="8" y="8" width="398" height="162.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="dLf-V5-W3u">
+                                                    <rect key="frame" x="0.0" y="178.5" width="414" height="282.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="282.5" id="7aK-EJ-u1R"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="xTp-ZQ-xBw" firstAttribute="leading" secondItem="xAP-a6-Bgx" secondAttribute="leading" id="6R4-QI-HTw"/>
-                                                <constraint firstAttribute="bottom" secondItem="xTp-ZQ-xBw" secondAttribute="bottom" id="e2T-Hm-3Z0"/>
-                                                <constraint firstItem="xTp-ZQ-xBw" firstAttribute="top" secondItem="xAP-a6-Bgx" secondAttribute="top" id="fbM-rh-Eon"/>
-                                                <constraint firstAttribute="trailing" secondItem="xTp-ZQ-xBw" secondAttribute="trailing" id="tLp-Ee-9aR"/>
+                                                <constraint firstItem="dLf-V5-W3u" firstAttribute="top" secondItem="K0q-NH-u6I" secondAttribute="bottom" constant="8" id="0mc-sW-PEU"/>
+                                                <constraint firstAttribute="trailing" secondItem="dLf-V5-W3u" secondAttribute="trailing" id="J5H-uL-9gA"/>
+                                                <constraint firstItem="dLf-V5-W3u" firstAttribute="leading" secondItem="xAP-a6-Bgx" secondAttribute="leading" id="SDy-ai-rMp"/>
+                                                <constraint firstItem="K0q-NH-u6I" firstAttribute="top" secondItem="xAP-a6-Bgx" secondAttribute="top" constant="8" id="UNh-Nl-egg"/>
+                                                <constraint firstItem="K0q-NH-u6I" firstAttribute="leading" secondItem="xAP-a6-Bgx" secondAttribute="leading" constant="8" id="bAg-sT-hYp"/>
+                                                <constraint firstAttribute="trailing" secondItem="K0q-NH-u6I" secondAttribute="trailing" constant="8" id="jF2-fc-VyZ"/>
+                                                <constraint firstAttribute="bottom" secondItem="dLf-V5-W3u" secondAttribute="bottom" constant="8" id="kPG-Pc-BsG"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <connections>
+                                            <outlet property="cellHeightConstraint" destination="7aK-EJ-u1R" id="bfD-Sr-tHi"/>
                                             <outlet property="thmbImageView" destination="dLf-V5-W3u" id="CSE-GK-xPT"/>
                                             <outlet property="titleLabel" destination="K0q-NH-u6I" id="hUh-E6-Oxa"/>
                                         </connections>

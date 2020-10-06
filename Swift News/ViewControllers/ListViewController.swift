@@ -15,7 +15,8 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        tableViewNews?.rowHeight = UITableView.automaticDimension
+        tableViewNews?.estimatedRowHeight = 44.0
         getNews()
     }
     
@@ -53,7 +54,6 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
 
             //configure your cell
             cell.newsItem = newsList[indexPath.row]
-            
             return cell
     }
 }

@@ -13,6 +13,8 @@ class NewsArticle: NSObject {
     var thumbnail: String?
     var selfText: String?
     var urlString: String?
+    var thumbnail_height: Int = 0
+    var thumbnail_width: Int = 0
     
     init(with dict: [String: Any?]?) {
         kind = dict?["kind"] as? String
@@ -22,6 +24,8 @@ class NewsArticle: NSObject {
         selfText = data?["selftext"] as? String
         thumbnail = data?["thumbnail"] as? String
         urlString = data?["url"] as? String
+        thumbnail_height = data?["thumbnail_height"] as? Int ?? 0
+        thumbnail_width = data?["thumbnail_width"] as? Int ?? 0
         
         if !((thumbnail ?? "").contains("http")) {
             thumbnail = nil
