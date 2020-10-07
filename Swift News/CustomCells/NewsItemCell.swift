@@ -9,15 +9,18 @@ import UIKit
 
 class NewsItemCell: UITableViewCell {
     
+    //MARK:- Properties
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var thmbImageView: UIImageView!
     @IBOutlet weak var cellHeightConstraint: NSLayoutConstraint!
+    
     var newsItem: NewsArticle? {
         didSet {
             configureCell()
         }
     }
     
+    //MARK:- UI Configuration
     func configureCell() {
         titleLabel.text = newsItem?.title
         if let thmbnailHeight = newsItem?.thumbnail_height, let thmbnailWidth = newsItem?.thumbnail_width, thmbnailHeight > 0, thmbnailWidth > 0 {
@@ -55,5 +58,9 @@ class NewsItemCell: UITableViewCell {
         } else {
             thmbImageView.image = nil
         }
+    }
+    
+    override func prepareForReuse() {
+        thmbImageView.image = nil
     }
 }

@@ -9,10 +9,11 @@ import UIKit
 
 class ListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+    //MARK:- Properties
     @IBOutlet weak var tableViewNews: UITableView?
     var newsList = [NewsArticle]()
     
-    
+    //MARK:- ViewController lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         tableViewNews?.rowHeight = UITableView.automaticDimension
@@ -20,6 +21,7 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
         getNews()
     }
     
+    //MARK:- Helper functions
     func getNews() {
         APIController.shared.getNews(parameters: nil, success: { [weak self] (data) in
             DispatchQueue.main.async {[weak self] in
@@ -45,6 +47,7 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
         tableViewNews?.reloadData()
     }
     
+    //MARK:- Tableview datasource and delegate methodss
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         newsList.count
     }
@@ -55,6 +58,14 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
             //configure your cell
             cell.newsItem = newsList[indexPath.row]
             return cell
+    }
+    
+    func tableView(_ tableView: UITableView,
+                   didSelectRowAt indexPath: IndexPath) {
+        if let detailsViewController = self.storyboard?.instantiateViewController(withIdentifier: "DetailsViewController") as? DetailsViewController {
+            detailsViewController.newsArticle = newsList[indexPath.row]
+            self.navigationController?.pushViewController(detailsViewController, animated: true)
+        }
     }
 }
 

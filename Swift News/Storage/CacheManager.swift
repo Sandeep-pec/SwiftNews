@@ -12,11 +12,13 @@ class CacheManager: NSObject {
     
     private let imageCache = NSCache<NSString, UIImage>()
     
+    //save image to cache
     func getImage(urlString: String) -> UIImage? {
         let image = imageCache.object(forKey: NSString(string: urlString))
         return image
     }
     
+    //retrieve image from cache
     func setImage(urlString: String, image: UIImage) {
         imageCache.setObject(image, forKey: urlString as NSString)
     }
